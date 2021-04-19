@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+int main () {
+    std::cout << setiosflags(std::ios_base::fixed) << setiosflags(std::ios_base::showpoint) << std::setprecision(2);
+    using namespace std;
+    cout << "Please enter first x coordinate\n";
+    float x1;
+    cin >> x1;
+    cout << "Please enter first y coordinate\n";
+    float y1;
+    cin >> y1;
+    cout << "Please enter second x coordinate\n";
+    float x2;
+    cin >> x2;
+    cout << "Please enter second y coordinate\n";
+    float y2;
+    cin >> y2;
+    float slope = (y2 - y1) / (x2 - x1);
+    if ((x1 == x2 && y1 == y2)) {
+        cout << "Given coordinates do not form a line";
+    }
+    if ((x1 != x2 && y1 != y2)) {
+        cout << "Given coordinates form a line\n";
+        cout << "Slope of line is " << slope;
+        cout << "\nSlope intercept equation is y=" <<slope;
+        float constant = y1/(slope*x1);
+        cout << "x+" << constant;
+    }
+    if (x1 == x2 && y1 != y2) {
+        cout << "Given points form a line\nLine is vertical\n";
+        cout << "x=" <<x1;
+    }
+    if (y1 == y2 && x1 != x2) {
+        cout << "Given points form a line\nLine is horizontal\n";
+        cout << "y=" <<y1;
+    }
+}
